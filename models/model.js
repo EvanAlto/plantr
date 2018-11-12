@@ -43,4 +43,4 @@ Gardener.hasOne(Plot)
 Gardener.belongsTo(Vegetable)
 Vegetable.hasMany(Gardener)
 
-module.exports = db;
+module.exports = { Vegetable, db };

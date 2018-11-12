@@ -1,10 +1,11 @@
 const express = require('express');
-const db = require('./models/model');
+const { db, Vegetable } = require('./models/model');
 const app =  express();
 
 (async () => {
     await db.sync({ force: true })
     .then(() => {
+        return Vegetable.create({ name: 'carrot', color: 'orange'});
         console.log('db synced');
     })
     .catch((err) => {
