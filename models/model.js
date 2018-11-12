@@ -3,7 +3,7 @@ const db = new Sequelize('postgres://localhost:5432/plantr', {
     logging: false
 });
 
-const Gardener = db.define('gardener', {
+const Gardener = db.define('gardeners', {
     name: {
         type: Sequelize.STRING
     },
@@ -13,17 +13,16 @@ const Gardener = db.define('gardener', {
 
 });
 
-const Plot = db.define('plot', {
+const Plot = db.define('plots', {
     size: {
         type: Sequelize.INTEGER
     },
     shaded: {
         type: Sequelize.BOOLEAN,
-        // defaultValue : false
     }
 })
 
-const Vegetable = db.define('vegetable', {
+const Vegetable = db.define('vegetables', {
     name: {
         type: Sequelize.STRING
     },

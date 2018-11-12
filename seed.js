@@ -5,15 +5,12 @@ const app =  express();
 (async () => {
     await db.sync({ force: true })
     .then(() => {
-        
+        console.log('db synced');
     })
     .catch((err) => {
-        console.error(err);
+        console.log(err);
     })
     .finally(() => {
         db.close();
-    });
-    app.listen(3000,() => {
-        console.log('listening on' + 3000);
     });
 })();
